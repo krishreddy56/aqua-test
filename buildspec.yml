@@ -7,7 +7,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login --no-include-email --region us-east-1
+      - aws ecr get-login --no-include-email| sed ‘s|https://|| --region us-east-1
   build:
     commands:
       - echo Build started on `date`
@@ -18,4 +18,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push https://160650730312.dkr.ecr.us-east-1.amazonaws.com/aqua-docker:latest
+      - docker push 160650730312.dkr.ecr.us-east-1.amazonaws.com/aqua-docker:latest
