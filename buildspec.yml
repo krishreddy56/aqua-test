@@ -19,7 +19,7 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push 160650730312.dkr.ecr.us-east-1.amazonaws.com/aqua-docker:latest
-      - printf '[{"name":"test-ecs","imageUri":"%s"}]' 160650730312.dkr.ecr.us-east-1.amazonaws.com/aqua-docker:latest > imagedefinitions.json
+      - printf '[{"name":"sample-app","imageUri":"%s"}]' 160650730312.dkr.ecr.us-east-1.amazonaws.com/aqua-docker:latest > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
 
